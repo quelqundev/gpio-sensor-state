@@ -1,11 +1,12 @@
 {
-  "name": "sensor-state",
+  "name": "gpio-sensor-state",
   "version": "1.0.0",
   "description": "This library allow to get a sensor GPIO state and to be notified on state change",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf build/ && tsc",
+    "start": "npm run build && node build/index.js"
   },
   "author": "",
   "license": "ISC",

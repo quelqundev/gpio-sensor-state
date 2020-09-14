@@ -39,6 +39,7 @@ export class GPIOSensorState {
             'trailing': true
         });
 
+        let self = this;
         this.sensor.watch(function (err: any, value: any) { //Watch for hardware interrupts on sensor GPIO, specify callback function
             if (err) { //if an error
                 console.error('There was an error', err); //output error message to console
@@ -47,12 +48,12 @@ export class GPIOSensorState {
             switch (value) {
                 case onoff.Gpio.HIGH: // inverted... weird
                     //DEBUT DE LA COUPURE DE COURANT
-                    this.state = SensorState.SENSOR_STATE_LOW;
+                    self.state = SensorState.SENSOR_STATE_LOW;
                     debounceLow();
                     break;
                 case onoff.Gpio.LOW:
                     //FIN DE LA COUPURE DE COURANT
-                    this.state = SensorState.SENSOR_STATE_HIGH;
+                    self.state = SensorState.SENSOR_STATE_HIGH;
                     debounceHigh();
                     break;
                 default:
