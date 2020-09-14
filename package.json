@@ -8,8 +8,15 @@
     "build": "rm -rf build/ && tsc",
     "start": "npm run build && node build/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quelqundev/gpio-sensor-state.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quelqundev/gpio-sensor-state/issues"
+  },
   "dependencies": {
     "lodash": "^4.17.20",
     "onoff": "^6.0.0"
